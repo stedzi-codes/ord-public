@@ -69,7 +69,7 @@ export function HomePage() {
             <Image
               className={styles.teamPhoto}
               src="/images/teampicture.jpg"
-              alt="Oslo Roller Derby team"
+              alt="Oslo Roller Derby team photo"
               width={2500}
               height={1877}
               sizes="(max-width: 640px) 100vw, 896px"
