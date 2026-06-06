@@ -8,10 +8,10 @@ export function Header() {
       <Link className={styles.logoLink} href="/" aria-label="Oslo Roller Derby home">
         <Image
           className={styles.logo}
-          src="/images/ordLogo.svg"
+          src="/images/rainbowlogo-transparent.png"
           alt="Oslo Roller Derby"
-          width={252}
-          height={247}
+          width={1955}
+          height={1955}
           priority
         />
       </Link>
