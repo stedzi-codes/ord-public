@@ -125,7 +125,7 @@
 
     grid-template-columns: 1fr;
     min-height: calc(100svh - 76px);
-    padding: var(--page-block-padding) 24px 56px;
+    padding: var(--page-block-padding) 18px 56px;
   }
 
   .tigerFrame {
@@ -136,9 +136,28 @@
     grid-column: auto;
     text-align: center;
     transform: none;
+
+    h1 {
+      font-size: clamp(2.75rem, 11.5vw, 5rem);
+      letter-spacing: -0.05em;
+      overflow-wrap: normal;
+    }
   }
 
   .copy {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .content {
+    h1 {
+      font-size: clamp(2.25rem, 10.75vw, 2.75rem);
+    }
   }
 }

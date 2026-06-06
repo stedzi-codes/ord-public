@@ -292,7 +292,12 @@
       var(--hero-stripes-image) center 22% / 92vw auto no-repeat,
       var(--color-charcoal);
     min-height: 560px;
-    padding: 72px 24px 48px;
+    padding: 72px 18px 48px;
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 12vw, 4rem);
+    letter-spacing: -0.03em;
   }
 
   .sponsorGrid {
@@ -320,5 +325,16 @@
 
   .primaryButton {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 11.5vw, 2.75rem);
   }
 }
