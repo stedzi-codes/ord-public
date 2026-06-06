@@ -4,6 +4,12 @@ import { useState } from "react";
 import styles from "./JokeBox.module.scss";
 
 const jokes = [
+    {
+    question: "I used to play piano by ear",
+    answer: "Now I play with my hands",
+    revealButtonText: ". . . .",
+    nextButtonText: "Tell me another!",
+  },
   {
     question: "How much does a chimney cost?",
     answer: "Nothing, it's on the house.",

@@ -82,7 +82,7 @@ export function HomePage() {
           >
             <Image
               className={styles.teamPhoto}
-              src={assetPath("/images/teampicture.jpg")}
+              src={assetPath("/images/torture.jpg")}
               alt="Oslo Roller Derby team photo"
               width={2500}
               height={1877}

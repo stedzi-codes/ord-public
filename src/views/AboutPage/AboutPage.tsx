@@ -100,7 +100,7 @@ export function AboutPage() {
       <section className={styles.hero} aria-label="Oslo Roller Derby team">
         <Image
           className={styles.heroImage}
-          src={assetPath("/images/prideord.jpg")}
+          src={assetPath("/images/pridegroup.jpg")}
           alt="Oslo Roller Derby team"
           fill
           priority
