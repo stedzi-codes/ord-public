@@ -36,8 +36,8 @@ const jokes = [
   },
     {
     question: "What did the beaver say when it slipped into the water?",
-    answer: "What?",
-    revealButtonText: "Damn it",
+    answer: "Damn it!",
+    revealButtonText: "What?",
     nextButtonText: "Tell me another!",
   },
   {
