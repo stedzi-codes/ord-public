@@ -129,11 +129,7 @@
   }
 
   .tigerFrame {
-    grid-column: auto;
-    grid-row: auto;
-    max-width: 340px;
-    order: -1;
-    transform: none;
+    display: none;
   }
 
   .content {
