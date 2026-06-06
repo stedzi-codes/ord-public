@@ -1,0 +1,39 @@
+.face {
+  --pixel-size: 4px;
+
+  display: grid;
+  grid-template-columns: repeat(21, var(--pixel-size));
+  grid-template-rows: repeat(17, var(--pixel-size));
+  height: calc(var(--pixel-size) * 17);
+  image-rendering: pixelated;
+  width: calc(var(--pixel-size) * 21);
+}
+
+.pixel {
+  height: var(--pixel-size);
+  width: var(--pixel-size);
+}
+
+.transparent {
+  background: transparent;
+}
+
+.light {
+  background: #cfc8b9;
+}
+
+.medium {
+  background: #62574f;
+}
+
+.dark {
+  background: #2f2925;
+}
+
+.mask {
+  background: #15120f;
+}
+
+.eye {
+  background: #ffffff;
+}

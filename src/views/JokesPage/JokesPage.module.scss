@@ -1,0 +1,88 @@
+.page {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(239, 122, 51, 0.1), transparent 32%),
+    var(--color-charcoal);
+  display: grid;
+  place-items: center;
+  min-height: calc(100svh - 88px);
+  overflow: hidden;
+  padding: 48px 20px;
+  position: relative;
+}
+
+.pattern {
+  align-content: start;
+  display: grid;
+  gap: 100px;
+  grid-template-columns: repeat(auto-fill, 84px);
+  inset: -42px;
+  justify-content: space-around;
+  padding: 42px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.racoonFace {
+  --pixel-size: 4px;
+
+  opacity: 0.82;
+}
+
+.patternLaughing {
+  .racoonFace:nth-child(odd) {
+    animation: racoonLaugh 200ms ease-in-out 3;
+  }
+
+  .racoonFace:nth-child(4n + 1) {
+    animation-delay: 90ms;
+  }
+
+  .racoonFace:nth-child(4n + 3) {
+    animation-delay: 180ms;
+  }
+}
+
+.jokeShell {
+  position: relative;
+  z-index: 1;
+}
+
+.srOnly {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    min-height: calc(100svh - 76px);
+  }
+
+  .pattern {
+    gap: 72px;
+    grid-template-columns: repeat(auto-fill, 63px);
+  }
+
+  .racoonFace {
+    --pixel-size: 3px;
+  }
+}
+
+@keyframes racoonLaugh {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  38% {
+    transform: translateY(-7px);
+  }
+
+  68% {
+    transform: translateY(2px);
+  }
+}
