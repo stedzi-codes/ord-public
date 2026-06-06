@@ -16,7 +16,7 @@ const aboutSections = [
         alt: "Skating officials group",
       },
       {
-        src: "/images/penaltybox2.jpg",
+        src: "/images/moreNsos.jpg",
         alt: "Officials at work",
       },
     ],
@@ -31,15 +31,15 @@ const aboutSections = [
     columns: 3,
     images: [
       {
-        src: "/images/aboutPlayers.png",
+        src: "/images/pikajump.jpg",
         alt: "Roller derby players in action",
       },
       {
-        src: "/images/prideord.jpg",
+        src: "/images/jam2picture.jpg",
         alt: "Team playing together",
       },
       {
-        src: "/images/deng.png",
+        src: "/images/blockerme.jpg",
         alt: "Player in motion",
       },
     ],
@@ -54,12 +54,13 @@ const aboutSections = [
     columns: 2,
     images: [
       {
-        src: "/images/aboutVolunteers.png",
+        src: "/images/volunteers2.jpg",
         alt: "Team volunteers",
       },
       {
-        src: "/images/refsandnsos.jpg",
+        src: "/images/trackninja2.jpg",
         alt: "Volunteers helping",
+        crop: "lower",
       },
     ],
     paragraphs: [
@@ -106,6 +107,9 @@ export function AboutPage() {
                 {section.images.map((image) => (
                   <div className={styles.imageFrame} key={image.src}>
                     <Image
+                      className={
+                        image.crop === "lower" ? styles.lowerImageCrop : ""
+                      }
                       src={image.src}
                       alt={image.alt}
                       fill
