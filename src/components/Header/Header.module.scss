@@ -29,25 +29,86 @@
   display: flex;
   gap: 24px;
   margin-left: auto;
+}
+
+.navItem {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-orange);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 6px;
+  }
+}
+
+.dropdownMenu {
+  background: rgba(0, 0, 0, 0.96);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  display: grid;
+  gap: 2px;
+  min-width: 190px;
+  opacity: 0;
+  padding: 12px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 16px);
+  transform: translateY(-6px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  z-index: 20;
+
+  &::before {
+    content: "";
+    height: 18px;
+    inset: auto 0 100%;
+    position: absolute;
+  }
 
   a {
     color: rgba(255, 255, 255, 0.78);
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    padding: 10px 12px;
     text-transform: uppercase;
-    transition: color 180ms ease;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease;
 
     &:hover,
     &:focus-visible {
+      background: rgba(239, 122, 51, 0.14);
       color: var(--color-orange);
     }
 
     &:focus-visible {
       outline: 2px solid var(--color-orange);
-      outline-offset: 6px;
+      outline-offset: -2px;
     }
   }
+}
+
+.navItemOpen .dropdownMenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .headerButton {
@@ -84,6 +145,25 @@
 
   .logo {
     width: 56px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .navLink {
+    font-size: 1rem;
+  }
+
+  .dropdownMenu {
+    right: auto;
+    left: 50%;
+    min-width: 170px;
+    transform: translate(-50%, -6px);
+  }
+
+  .navItemOpen .dropdownMenu {
+    transform: translate(-50%, 0);
   }
 
   .headerButton {
