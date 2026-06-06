@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./HomePage.module.scss";
 
-const sponsors = [
+const logoSponsors = [
   {
     name: "Deng",
     image: "/images/deng.png",
@@ -14,12 +14,6 @@ const sponsors = [
     image: "/images/wicked.png",
     width: 360,
     height: 217,
-  },
-  {
-    name: "Sponsor Logo 3",
-  },
-  {
-    name: "Sponsor Logo 4",
   },
 ];
 
@@ -89,8 +83,8 @@ export function HomePage() {
         <div className={styles.sponsorsContent}>
           <h2>Our Sponsors</h2>
           <div className={styles.sponsorGrid}>
-            {sponsors.map((sponsor) => {
-              const sponsorContent = sponsor.image ? (
+            {logoSponsors.map((sponsor) => {
+              const sponsorContent = (
                 <Image
                   className={styles.sponsorLogo}
                   src={sponsor.image}
@@ -99,8 +93,6 @@ export function HomePage() {
                   height={sponsor.height}
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
-              ) : (
-                <span>{sponsor.name}</span>
               );
 
               return sponsor.href ? (
@@ -120,6 +112,36 @@ export function HomePage() {
                 </div>
               );
             })}
+
+            <div className={`${styles.sponsorCard} ${styles.grasrotCard}`}>
+              <Image
+                className={styles.grasrotImage}
+                src="/images/grasrot.png"
+                alt="Grasrotandelen QR code"
+                width={115}
+                height={123}
+              />
+              <div className={styles.sponsorText}>
+                <h3>Support us with your grasrotandel</h3>
+                <p>
+                  You can donate through all Norsk Tippings channels by sending
+                  an SMS to &quot;Grasrotandelen 997500000&quot; to 60000
+                </p>
+              </div>
+            </div>
+
+            <div className={`${styles.sponsorCard} ${styles.textSponsorCard}`}>
+              <div className={styles.sponsorText}>
+                <h3>Do you want to be a sponsor?</h3>
+                <p>
+                  If you wish to support the club and get your logo out for our
+                  events then send an email to{" "}
+                  <a href="mailto:spons@oslorollerderby.no">
+                    spons@oslorollerderby.no
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
