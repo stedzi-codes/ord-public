@@ -7,13 +7,14 @@ const logoSponsors = [
     image: "/images/deng.png",
     width: 486,
     height: 270,
-    href: "https://example.com",
+    href: "https://www.deng.no/"
   },
   {
     name: "Wicked",
     image: "/images/wicked.png",
     width: 360,
     height: 217,
+    href: "https://wickedskatewear.com/"
   },
 ];
 
@@ -37,7 +38,7 @@ export function HomePage() {
               uten hjul.<br/><br/>
               Bli med oss da vel!
             </p>
-            <a className={styles.primaryButton} href="#join">
+            <a className={styles.primaryButton} target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform">
               Bli med oss!
             </a>
           </div>
@@ -130,20 +131,18 @@ export function HomePage() {
                 height={123}
               />
               <div className={styles.sponsorText}>
-                <h3>Support us with your grasrotandel</h3>
+                <h3>Støtt oss med din grasrotandel</h3>
                 <p>
-                  You can donate through all Norsk Tippings channels by sending
-                  an SMS to &quot;Grasrotandelen 997500000&quot; to 60000
+                  Du kan bli grasrotgiver i alle Norsk Tippings kanaler eller ved å sende en SMS  &quot;Grasrotandelen 997503465&quot; til 60000
                 </p>
               </div>
             </div>
 
             <div className={`${styles.sponsorCard} ${styles.textSponsorCard}`}>
               <div className={styles.sponsorText}>
-                <h3>Do you want to be a sponsor?</h3>
+                <h3>Vil du bli sponsor?</h3>
                 <p>
-                  If you wish to support the club and get your logo out for our
-                  events then send an email to{" "}
+                  Ønsker du å støtte klubben og samtidig få med logo på kamper og andre arrangementer? Send oss en mail til{" "}
                   <a href="mailto:spons@oslorollerderby.no">
                     spons@oslorollerderby.no
                   </a>

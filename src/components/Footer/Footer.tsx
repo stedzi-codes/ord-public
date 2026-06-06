@@ -16,7 +16,7 @@ export function Footer() {
 
       <div className={styles.socialLinks}>
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/oslorollerderby"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -24,7 +24,7 @@ export function Footer() {
           <FaFacebookF aria-hidden="true" />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/oslorollerderby/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

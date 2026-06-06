@@ -1,10 +1,23 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import styles from "./AboutPage.module.scss";
 
-const aboutSections = [
+type AboutSection = {
+  title: string;
+  variant: "plain" | "callout";
+  columns: 2 | 3;
+  images: {
+    src: string;
+    alt: string;
+    crop?: "lower";
+  }[];
+  paragraphs: ReactNode[];
+};
+
+const aboutSections: AboutSection[] = [
   {
     title: "Skating Officials",
-    variant: "plain",
+    variant: "callout",
     columns: 3,
     images: [
       {
@@ -21,13 +34,22 @@ const aboutSections = [
       },
     ],
     paragraphs: [
-      "Our skating officials are the backbone of every bout, ensuring fair play and safety on the track. These dedicated individuals undergo rigorous training to master the complex rules of roller derby and maintain the integrity of the game. From referees who make split-second calls during high-speed action to non-skating officials who track penalties and manage the scoreboard, each role is crucial to the sport.",
-      "We're always looking for new officials to join our crew. Whether you want to skate as a referee or contribute as a non-skating official, we provide comprehensive training and mentorship. Being an official offers a unique perspective on the game and a vital role in our community.",
+      "Dommerne og NSO-ene våre er en viktig del av funksjonærcrewet som gjør roller derby mulig. Dommerne står på rulleskøyter og har kontroll på spillets regler, poengtaking og at kampene gjennomføres etter WFTDAs regler og retningslinjer. Som dommer trenger du stort sett det samme utstyret som spillerne, men du trenger ikke tannbeskytter, og inlineskøyter er også tillatt.",
+      "NSO betyr Non-Skating Official, og som navnet tilsier jobber NSO-ene uten rulleskøyter. De gjør en avgjørende jobb under kamper og treningskamper ved å starte og stoppe jams og omganger, notere poeng, ta tiden i straffeboksen, registrere hvilke spillere som er på banen, og holde oversikt over mange av detaljene som får kampen til å flyte.",
+      <>
+        Som dommer eller NSO får du et unikt innblikk i roller derby som sport,
+        og du blir en viktig del av miljøet rundt laget. Uten funksjonærer blir
+        det ingen roller derby. Oslo Roller Derby er stadig på utkikk etter
+        flere dommere og NSO-er, enten du allerede kan stå på rulleskøyter eller
+        ønsker å bidra uten skøyter. Hvis du vil bli dommer, NSO, eller bare
+        vite mer, kan du kontakte oss på{" "}
+        <a href="https://example.com">officials@oslorollerderby.no</a>.
+      </>,
     ],
   },
   {
-    title: "Players",
-    variant: "callout",
+    title: "Spillere",
+    variant: "plain",
     columns: 3,
     images: [
       {
@@ -44,13 +66,13 @@ const aboutSections = [
       },
     ],
     paragraphs: [
-      "The Oslo Tigers are fierce competitors who bring passion, skill, and determination to every bout. Our players range from seasoned athletes with years of derby experience to fresh meat just learning to skate. What unites us is our love for the sport and our commitment to teamwork. We train hard, play harder, and support each other both on and off the track.",
-      "New to skating? No problem! We welcome players of all skill levels and provide the training you need to succeed. Our experienced skaters and coaches will help you develop your skills, build confidence, and find your place on the track. Whether you dream of being a jammer, blocker, or pivot, there's a position for you with the Tigers.",
+      "Roller derby er en fysisk krevende sport kombinert med taktikk. Ved å gå vårt nybegynnerkurs vil du lære de grunnleggende ferdighetene som trengs for å være en trygg spiller.", 
+      "ORDs nybegynnerkurs er lagt opp slik at man kan ta den tiden man trenger for å fullføre. Vårt heteste tips for å ha god progresjon, uansett nivå, er å møte på så mange treninger som mulig.",
     ],
   },
   {
-    title: "Volunteers",
-    variant: "plain",
+    title: "Frivillige",
+    variant: "callout",
     columns: 2,
     images: [
       {
@@ -64,8 +86,7 @@ const aboutSections = [
       },
     ],
     paragraphs: [
-      "Behind every successful bout is an army of dedicated volunteers who make it all possible. From setting up the track and managing the door to running merch tables and coordinating events, our volunteers are essential to Oslo Roller Derby's success. They're the unsung heroes who work tirelessly to create an amazing experience for players and fans alike.",
-      "Want to be part of the action without lacing up skates? We're always looking for enthusiastic volunteers to join our team. Whether you can commit to regular help or just want to pitch in at events, your contribution makes a real difference. Plus, it's a great way to meet people, learn about the sport, and become part of our tight-knit community.",
+      "Det er mange roller som skal fylles når det spilles kamp. Og vi setter utrolig pris på alle de frivillige som stiller opp for å gjøre det mulig. Vi har track-ninjaer som passer på at banen alltid er teipet slik den skal, billett og loddselgere, merch selgere osv. ",
     ],
   },
 ];
@@ -84,13 +105,28 @@ export function AboutPage() {
         />
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
-            <h1>About Us</h1>
+            <h1>Mer enn bare en trimgruppe</h1>
           </div>
         </div>
       </section>
 
       <section className={styles.contentSection}>
         <div className={styles.content}>
+          <article className={styles.aboutBlock}>
+            <p>
+              Vi er en klubb bestående av roller derby spillere, dommere,
+              funksjonærer og andre frivillige. Det er mange roller som må på
+              plass når det skal spilles en roller derby kamp. Vi har
+              nybegynnerkurs for de som vil stå på skøyter. Der lærer man om
+              sporten og bestemmer selv om målet skal være spiller eller dommer.
+              Vi har nybegynnerkurs på starten av vår og høst.
+            </p>
+            <p>
+              Har du lyst til å være frivillig eller funksjonær uten skøyter?
+              Les mer om NSO rollen nedenfor!
+            </p>
+          </article>
+
           {aboutSections.map((section) => (
             <article
               className={`${styles.aboutBlock} ${
@@ -122,8 +158,8 @@ export function AboutPage() {
                   </div>
                 ))}
               </div>
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+              {section.paragraphs.map((paragraph, index) => (
+                <p key={`${section.title}-${index}`}>{paragraph}</p>
               ))}
             </article>
           ))}

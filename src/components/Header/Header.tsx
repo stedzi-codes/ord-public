@@ -17,8 +17,8 @@ export function Header() {
       </Link>
 
       <nav className={styles.nav} aria-label="Primary navigation">
-        <Link href="/about">About</Link>
-        <Link href="/#join">Join</Link>
+        <Link href="/about">Om Oss</Link>
+        <Link href="/join">Join</Link>
       </nav>
     </header>
   );
