@@ -43,9 +43,11 @@
 
 .heroText {
   color: var(--color-text-muted);
-  font-size: 1.125rem;
+  color: white;
+  font-size: 1.3rem;
   line-height: 1.55;
   max-width: 640px;
+
 }
 
 .primaryButton {
@@ -102,7 +104,7 @@
 
   p {
     color: var(--color-text-soft);
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
   }
 }
@@ -114,6 +116,22 @@
 .infoBlockYellow {
   border-color: var(--color-yellow);
   scroll-margin-top: 120px;
+}
+
+.teamPhotoFrame {
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  max-width: 896px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.teamPhoto {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  width: 100%;
 }
 
 .sponsorsSection {
@@ -203,7 +221,7 @@
 
   p {
     color: var(--color-text-soft);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     font-weight: 700;
     line-height: 1.55;
   }
@@ -268,6 +286,14 @@
 
   .sponsorGrid {
     grid-template-columns: 1fr;
+  }
+
+  .teamPhotoFrame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .teamPhoto {
+    object-position: center center;
   }
 
   .grasrotCard {

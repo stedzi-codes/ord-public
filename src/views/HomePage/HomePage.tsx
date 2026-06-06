@@ -32,13 +32,13 @@ export function HomePage() {
 
           <div className={styles.heroFooter}>
             <p className={styles.heroText}>
-              Norway&apos;s capital city&apos;s premier roller derby team.
-              Whether you&apos;re a complete beginner or an experienced skater,
-              everyone is welcome to join our fierce and friendly community.
-              Come skate with the tigers!
+              Roller Derby er en fullkontaktsport på rulleskjøyter, og vi er hovedstadens klubb. 
+              Vi har nybegynnerskurs og en plass til alle. Om du vil væare spiller, dommer med eller
+              uten hjul.<br/><br/>
+              Bli med oss da vel!
             </p>
             <a className={styles.primaryButton} href="#join">
-              Join The Team
+              Bli med oss!
             </a>
           </div>
         </div>
@@ -49,31 +49,39 @@ export function HomePage() {
           <article className={`${styles.infoBlock} ${styles.infoBlockOrange}`}>
             <h2>Oslo Roller Derby</h2>
             <p>
-              Roller derby is a high-energy, full-contact sport played on quad
-              roller skates. Two teams race around a track, with each
-              team&apos;s &quot;jammer&quot; trying to lap members of the
-              opposing team to score points. It&apos;s a strategic, fast-paced
-              game that requires athleticism, teamwork, and determination.
-              Founded in the early 2000s, modern roller derby has grown into a
-              global phenomenon with thousands of teams worldwide, emphasizing
-              inclusivity, athleticism, and community spirit.
+              Klubben Oslo Roller Derby ble stiftet 19.10.2011 og har ca 60 medlemmer fordelt på spillere,
+              dommere, non-skating officials (NSO/funksjonærer), og frivillige. ORD er medlem av Women&apos;s Flat Track Roller Derby Association (WFTDA),
+              Norges Idrettsforbund og Norges Skøyteforbund.<br/><br/>
+
+              Roller Derby er en kontaktsport på rulleskøyter. På en oval, flat bane kjemper to lag om å ha den kjappeste poengsankeren og de beste blokkerne. Roller derby er beinhard idrett og underholdning på en gang. Og det er nesten like moro å se på som det er å spille.<br/><br/>
+
+              ORD har to konkurrerende lag; Oslo Roller Derby (A-lag) og Tiger City Beasts (B-lag). Begge lag spiller kamper og turneringer på både nasjonalt og internasjonalt nivå.
+
+
             </p>
           </article>
+
+          <div
+            className={styles.teamPhotoFrame}
+            aria-label="Oslo Roller Derby team photo"
+          >
+            <Image
+              className={styles.teamPhoto}
+              src="/images/teampicture.jpg"
+              alt="Oslo Roller Derby team"
+              width={2500}
+              height={1877}
+              sizes="(max-width: 640px) 100vw, 896px"
+            />
+          </div>
 
           <article
             className={`${styles.infoBlock} ${styles.infoBlockYellow}`}
             id="join"
           >
-            <h2>Join Us</h2>
+            <h2>Bli med</h2>
             <p>
-              Oslo Roller Derby welcomes all skill levels and backgrounds. Our
-              training sessions focus on building skating fundamentals, game
-              strategy, and team cohesion in a supportive environment. We
-              practice twice a week and compete in national and international
-              tournaments throughout the year. Beyond the sport, we&apos;re a
-              tight-knit community that values friendship, empowerment, and
-              having fun. No prior skating experience is required - just bring
-              your enthusiasm and we&apos;ll teach you the rest!
+                Oslo Roller Derby ønsker alle ferdighetsnivåer og bakgrunner velkommen. Treningssesjonene våre fokuserer på å bygge grunnleggende skøyteferdigheter, spillstrategi og lagånd i et støttende miljø. Vi trener to ganger i uken og konkurrerer i nasjonale og internasjonale turneringer gjennom hele året. Utover sporten er vi et tett sammensveiset fellesskap som verdsetter vennskap, myndiggjøring og å ha det gøy. Ingen tidligere skøyterfaring er nødvendig – bare ta med entusiasmen din, så lærer vi deg resten!
             </p>
           </article>
         </div>

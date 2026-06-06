@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Oswald } from "next/font/google";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import "./globals.scss";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
+});
 
 export const metadata: Metadata = {
   title: "Oslo Roller Derby",
@@ -14,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={oswald.variable}>
       <body>
         <Header />
         <main className="site-content">{children}</main>

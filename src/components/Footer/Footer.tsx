@@ -8,9 +8,10 @@ export function Footer() {
         <div className={styles.brandRow}>
           <span className={styles.brand}>Oslo Roller Derby</span>
           <span className={styles.divider} aria-hidden="true" />
-          <span className={styles.established}>Est. 2010</span>
+          <span className={styles.established}>Est. 2011</span>
         </div>
         <p className={styles.copyright}>Copyright 2026 Oslo Roller Derby</p>
+        <p>Made with ❤️ by Just Jeff 🤠</p>
       </div>
 
       <div className={styles.socialLinks}>

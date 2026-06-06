@@ -10,8 +10,8 @@
   --color-yellow: #ffcb4d;
   --color-text-muted: rgba(255, 255, 255, 0.78);
   --color-text-soft: #d4d4d8;
-  --font-body: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: Impact, "Arial Black", "Avenir Next Condensed", var(--font-body);
+  --font-body: var(--font-oswald), "Oswald", sans-serif;
+  --font-display: var(--font-oswald), "Oswald", sans-serif;
 }
 
 html {
