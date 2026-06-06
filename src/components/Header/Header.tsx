@@ -10,15 +10,15 @@ export function Header() {
           className={styles.logo}
           src="/images/ordLogo.svg"
           alt="Oslo Roller Derby"
-          width={72}
-          height={70}
+          width={252}
+          height={247}
           priority
         />
       </Link>
 
       <nav className={styles.nav} aria-label="Primary navigation">
         <Link href="/about">Om Oss</Link>
-        <Link href="/join">Join</Link>
+        <Link href="/join">Bli Med</Link>
       </nav>
     </header>
   );

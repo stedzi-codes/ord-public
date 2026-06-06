@@ -107,6 +107,14 @@
     font-size: 1.3rem;
     line-height: 1.7;
   }
+
+  a {
+    color: var(--color-orange);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
 }
 
 .infoBlockOrange {
@@ -117,6 +125,7 @@
   border-color: var(--color-yellow);
   scroll-margin-top: 120px;
 }
+
 
 .teamPhotoFrame {
   aspect-ratio: 16 / 9;
@@ -242,6 +251,8 @@
     }
   }
 }
+
+
 
 @media (min-width: 768px) {
   .hero {

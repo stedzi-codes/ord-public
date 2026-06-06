@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={oswald.variable}>
-      <body>
+      <body suppressHydrationWarning>
         <Header />
         <main className="site-content">{children}</main>
         <Footer />

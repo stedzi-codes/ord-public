@@ -51,8 +51,8 @@ export function HomePage() {
             <h2>Oslo Roller Derby</h2>
             <p>
               Klubben Oslo Roller Derby ble stiftet 19.10.2011 og har ca 60 medlemmer fordelt på spillere,
-              dommere, non-skating officials (NSO/funksjonærer), og frivillige. ORD er medlem av Women&apos;s Flat Track Roller Derby Association (WFTDA),
-              Norges Idrettsforbund og Norges Skøyteforbund.<br/><br/>
+              dommere, non-skating officials (NSO/funksjonærer), og frivillige. ORD er medlem av <a className="basicLink" target="_blank" href='https://wftda.com/'>Women&apos;s Flat Track Roller Derby Association</a> (WFTDA),
+              <a className="basicLink" href="https://www.idrettsforbundet.no/" target="_blank"> Norges Idrettsforbund</a> og <a target="_blank" href="https://www.skoyteforbundet.no/" className="basicLink">Norges Skøyteforbund.</a><br/><br/>
 
               Roller Derby er en kontaktsport på rulleskøyter. På en oval, flat bane kjemper to lag om å ha den kjappeste poengsankeren og de beste blokkerne. Roller derby er beinhard idrett og underholdning på en gang. Og det er nesten like moro å se på som det er å spille.<br/><br/>
 

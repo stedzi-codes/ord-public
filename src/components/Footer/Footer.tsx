@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { SiLinktree } from "react-icons/si";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -30,6 +31,14 @@ export function Footer() {
           aria-label="Instagram"
         >
           <FaInstagram aria-hidden="true" />
+        </a>
+        <a
+          href="https://linktr.ee/oslorollerderby"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Linktree"
+        >
+          <SiLinktree aria-hidden="true" />
         </a>
       </div>
     </footer>

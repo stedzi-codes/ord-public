@@ -11,6 +11,17 @@ export function JoinPage() {
           Denne siden er på vei. Snart finner du informasjon om nybegynnerkurs,
           treninger og hvordan du kan bli med i tigerflokken.
         </p>
+        <p className={styles.copy}>
+          I mellomtiden kan du følge oss og holde deg oppdatert på{" "}
+          <a
+            href="https://www.instagram.com/oslorollerderby/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          !
+        </p>
       </div>
 
       <div className={styles.tigerFrame} aria-hidden="true">
