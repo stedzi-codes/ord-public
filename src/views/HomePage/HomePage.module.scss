@@ -162,6 +162,15 @@
   }
 }
 
+.sponsorLogo {
+  display: block;
+  height: auto;
+  max-height: 78px;
+  max-width: min(100%, 260px);
+  object-fit: contain;
+  width: auto;
+}
+
 @media (min-width: 768px) {
   .hero {
     padding-left: 64px;

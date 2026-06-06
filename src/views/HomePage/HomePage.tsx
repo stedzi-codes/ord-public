@@ -1,10 +1,26 @@
+import Image from "next/image";
 import styles from "./HomePage.module.scss";
 
-const sponsorPlaceholders = [
-  "Sponsor Logo 1",
-  "Sponsor Logo 2",
-  "Sponsor Logo 3",
-  "Sponsor Logo 4",
+const sponsors = [
+  {
+    name: "Deng",
+    image: "/images/deng.png",
+    width: 486,
+    height: 270,
+    href: "https://example.com",
+  },
+  {
+    name: "Wicked",
+    image: "/images/wicked.png",
+    width: 360,
+    height: 217,
+  },
+  {
+    name: "Sponsor Logo 3",
+  },
+  {
+    name: "Sponsor Logo 4",
+  },
 ];
 
 export function HomePage() {
@@ -73,11 +89,37 @@ export function HomePage() {
         <div className={styles.sponsorsContent}>
           <h2>Our Sponsors</h2>
           <div className={styles.sponsorGrid}>
-            {sponsorPlaceholders.map((sponsor) => (
-              <div className={styles.sponsorCard} key={sponsor}>
-                <span>{sponsor}</span>
-              </div>
-            ))}
+            {sponsors.map((sponsor) => {
+              const sponsorContent = sponsor.image ? (
+                <Image
+                  className={styles.sponsorLogo}
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  width={sponsor.width}
+                  height={sponsor.height}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              ) : (
+                <span>{sponsor.name}</span>
+              );
+
+              return sponsor.href ? (
+                <a
+                  className={styles.sponsorCard}
+                  href={sponsor.href}
+                  key={sponsor.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${sponsor.name}`}
+                >
+                  {sponsorContent}
+                </a>
+              ) : (
+                <div className={styles.sponsorCard} key={sponsor.name}>
+                  {sponsorContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
