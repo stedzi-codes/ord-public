@@ -9,7 +9,7 @@ type AboutSection = {
   images: {
     src: string;
     alt: string;
-    crop?: "lower";
+    crop?: "lower" | "mobileTop";
   }[];
   paragraphs: ReactNode[];
 };
@@ -55,6 +55,7 @@ const aboutSections: AboutSection[] = [
       {
         src: "/images/pikajump.jpg",
         alt: "Roller derby players in action",
+        crop: "mobileTop",
       },
       {
         src: "/images/jam2picture.jpg",
@@ -63,6 +64,7 @@ const aboutSections: AboutSection[] = [
       {
         src: "/images/blockerme.jpg",
         alt: "Player in motion",
+        crop: "mobileTop",
       },
     ],
     paragraphs: [
@@ -143,9 +145,14 @@ export function AboutPage() {
                 {section.images.map((image) => (
                   <div className={styles.imageFrame} key={image.src}>
                     <Image
-                      className={
-                        image.crop === "lower" ? styles.lowerImageCrop : ""
-                      }
+                      className={[
+                        image.crop === "lower" ? styles.lowerImageCrop : "",
+                        image.crop === "mobileTop"
+                          ? styles.mobileTopImageCrop
+                          : "",
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
                       src={image.src}
                       alt={image.alt}
                       fill

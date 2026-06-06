@@ -118,6 +118,7 @@
 
   img {
     object-fit: cover;
+    object-position: center 45%;
   }
 }
 
@@ -152,6 +153,10 @@
   .twoColumnGrid {
     grid-template-columns: 1fr;
   }
+
+  .mobileTopImageCrop {
+    object-position: center 22%;
+  }
 }
 
 @media (max-width: 560px) {
@@ -171,5 +176,9 @@
     h2 {
       font-size: 1.625rem;
     }
+  }
+
+  .mobileTopImageCrop {
+    object-position: center 16%;
   }
 }
