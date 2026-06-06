@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./Header.module.scss";
 
 export function Header() {
@@ -8,7 +9,7 @@ export function Header() {
       <Link className={styles.logoLink} href="/" aria-label="Oslo Roller Derby home">
         <Image
           className={styles.logo}
-          src="/images/rainbowlogo-transparent.png"
+          src={assetPath("/images/rainbowlogo-transparent.png")}
           alt="Oslo Roller Derby"
           width={1955}
           height={1955}

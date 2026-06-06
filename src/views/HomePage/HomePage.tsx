@@ -1,7 +1,17 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./HomePage.module.scss";
 
-const logoSponsors = [
+type LogoSponsor = {
+  name: string;
+  image: `/${string}`;
+  width: number;
+  height: number;
+  href: string;
+};
+
+const logoSponsors: LogoSponsor[] = [
   {
     name: "Deng",
     image: "/images/deng.png",
@@ -19,9 +29,13 @@ const logoSponsors = [
 ];
 
 export function HomePage() {
+  const heroStyle = {
+    "--hero-stripes-image": `url("${assetPath("/images/tigerstriper.png")}")`,
+  } as CSSProperties;
+
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
+      <section className={styles.hero} style={heroStyle}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>
             RÅ
@@ -68,7 +82,7 @@ export function HomePage() {
           >
             <Image
               className={styles.teamPhoto}
-              src="/images/teampicture.jpg"
+              src={assetPath("/images/teampicture.jpg")}
               alt="Oslo Roller Derby team photo"
               width={2500}
               height={1877}
@@ -96,7 +110,7 @@ export function HomePage() {
               const sponsorContent = (
                 <Image
                   className={styles.sponsorLogo}
-                  src={sponsor.image}
+                  src={assetPath(sponsor.image)}
                   alt={sponsor.name}
                   width={sponsor.width}
                   height={sponsor.height}
@@ -125,7 +139,7 @@ export function HomePage() {
             <div className={`${styles.sponsorCard} ${styles.grasrotCard}`}>
               <Image
                 className={styles.grasrotImage}
-                src="/images/grasrot.png"
+                src={assetPath("/images/grasrot.png")}
                 alt="Grasrotandelen QR code"
                 width={115}
                 height={123}

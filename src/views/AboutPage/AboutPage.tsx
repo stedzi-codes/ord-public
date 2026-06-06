@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./AboutPage.module.scss";
 
 type AboutSection = {
@@ -7,7 +8,7 @@ type AboutSection = {
   variant: "plain" | "callout";
   columns: 2 | 3;
   images: {
-    src: string;
+    src: `/${string}`;
     alt: string;
     crop?: "lower" | "mobileTop";
   }[];
@@ -99,7 +100,7 @@ export function AboutPage() {
       <section className={styles.hero} aria-label="Oslo Roller Derby team">
         <Image
           className={styles.heroImage}
-          src="/images/prideord.jpg"
+          src={assetPath("/images/prideord.jpg")}
           alt="Oslo Roller Derby team"
           fill
           priority
@@ -153,7 +154,7 @@ export function AboutPage() {
                       ]
                         .filter(Boolean)
                         .join(" ")}
-                      src={image.src}
+                      src={assetPath(image.src)}
                       alt={image.alt}
                       fill
                       sizes={

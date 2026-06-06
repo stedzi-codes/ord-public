@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./JoinPage.module.scss";
 
 export function JoinPage() {
@@ -27,7 +28,7 @@ export function JoinPage() {
       <div className={styles.tigerFrame} aria-hidden="true">
         <Image
           className={styles.tiger}
-          src="/images/tiger.png"
+          src={assetPath("/images/tiger.png")}
           alt=""
           width={742}
           height={884}
