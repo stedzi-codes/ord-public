@@ -73,7 +73,7 @@ export function JoinPage() {
               med trenere og klubbmedlemmer som husker veldig godt hvordan det
               var å være ny.
             </p>
-            <a className={styles.primaryButton} href="#">
+            <a className={styles.primaryButton} href="/https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform">
               Meld deg på
             </a>
           </article>
@@ -129,7 +129,7 @@ export function JoinPage() {
       <section className={styles.finalCta} style={ctaStyle}>
         <div className={styles.finalCtaContent}>
           <h2>Vil du bli en av oss, eller bare lære deg å stå på rulleskøyter?</h2>
-          <a className={styles.secondaryButton} href="#">
+          <a className={styles.secondaryButton} href="/https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform">
             Bli medlem
           </a>
         </div>
