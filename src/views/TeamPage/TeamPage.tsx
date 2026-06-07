@@ -3,20 +3,36 @@ import { assetPath } from "@/lib/assetPath";
 import styles from "./TeamPage.module.scss";
 
 export type TeamRosterPlayer = {
-  number: string;
+  number?: string;
   name: string;
 };
+
+type TeamPageVariant = "team" | "officials";
 
 export type TeamPageProps = {
   leagueTitle: string;
   teamTitle: string;
   teamLabel: string;
   roster: TeamRosterPlayer[];
+  variant?: TeamPageVariant;
+  mascot?: {
+    src: `/${string}`;
+    alt: string;
+    width: number;
+    height: number;
+  };
   teamPhoto: {
     src: `/${string}`;
     alt: string;
   };
 };
+
+const defaultMascot = {
+  src: "/images/tiger.png",
+  alt: "",
+  width: 742,
+  height: 884,
+} satisfies NonNullable<TeamPageProps["mascot"]>;
 
 function splitRosterIntoColumns(roster: TeamRosterPlayer[]) {
   const columnBreak = Math.ceil(roster.length / 2);
@@ -32,20 +48,26 @@ export function TeamPage({
   teamTitle,
   teamLabel,
   roster,
+  variant = "team",
+  mascot = defaultMascot,
   teamPhoto,
 }: TeamPageProps) {
   const { columnBreak, columns } = splitRosterIntoColumns(roster);
+  const rosterSectionClassName =
+    variant === "officials"
+      ? `${styles.rosterSection} ${styles.officialsVariant}`
+      : styles.rosterSection;
 
   return (
     <div className={styles.page}>
-      <section className={styles.rosterSection}>
-        <div className={styles.tigerFrame} aria-hidden="true">
+      <section className={rosterSectionClassName}>
+        <div className={styles.mascotFrame} aria-hidden="true">
           <Image
-            className={styles.tiger}
-            src={assetPath("/images/tiger.png")}
-            alt=""
-            width={742}
-            height={884}
+            className={styles.mascot}
+            src={assetPath(mascot.src)}
+            alt={mascot.alt}
+            width={mascot.width}
+            height={mascot.height}
             priority
           />
         </div>
@@ -64,8 +86,13 @@ export function TeamPage({
                   start={columnIndex === 0 ? 1 : columnBreak + 1}
                 >
                   {column.map((player) => (
-                    <li key={`${player.number}-${player.name}`}>
-                      <span className={styles.playerNumber}>{player.number}</span>
+                    <li
+                      className={player.number ? undefined : styles.rosterNameOnly}
+                      key={`${player.number ?? "official"}-${player.name}`}
+                    >
+                      {player.number ? (
+                        <span className={styles.playerNumber}>{player.number}</span>
+                      ) : null}
                       <span className={styles.playerName}>{player.name}</span>
                     </li>
                   ))}

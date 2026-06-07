@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { UnderConstructionSection } from "@/components/UnderConstructionSection/UnderConstructionSection";
+import { officialsData } from "@/content/officials";
+import { TeamPage } from "@/views/TeamPage/TeamPage";
 
 export const metadata: Metadata = {
   title: "Officials | Oslo Roller Derby",
@@ -7,14 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Officials() {
-  return (
-    <UnderConstructionSection
-      eyebrow="Oslo Roller Derby"
-      title="Officials"
-      body={[
-        "Denne siden er under arbeid. Snart finner du mer informasjon om dommere, NSO-er og hvordan du kan bli med i funksjonærcrewet.",
-      ]}
-      image={{ priority: true }}
-    />
-  );
+  return <TeamPage {...officialsData} />;
 }
