@@ -1,0 +1,235 @@
+.page {
+  background: var(--color-black);
+  color: var(--foreground);
+}
+
+.teamPhotoSection {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), var(--color-black)),
+    var(--color-charcoal);
+  padding: clamp(32px, 6vw, 72px) 24px;
+}
+
+.teamPhotoFrame {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.58);
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.teamPhoto {
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.rosterSection {
+  --page-block-padding: 96px;
+  --page-block-padding-bottom: 32px;
+  --page-gutter: clamp(24px, 7vw, 112px);
+
+  align-items: center;
+  background:
+    radial-gradient(circle at 24% 28%, rgba(239, 122, 51, 0.34), transparent 34%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.1)),
+    var(--color-charcoal);
+  display: grid;
+  gap: 48px;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 0.9fr);
+  min-height: calc(100svh - 88px);
+  overflow: hidden;
+  padding: var(--page-block-padding) var(--page-gutter) var(--page-block-padding-bottom);
+  position: relative;
+
+  &::before {
+    background: var(--color-orange);
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.tigerFrame {
+  align-self: end;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  max-width: min(42vw, 460px);
+  min-width: 280px;
+  position: relative;
+  transform: translate(
+    calc(var(--page-gutter) * -1),
+    var(--page-block-padding-bottom)
+  );
+  width: 100%;
+  z-index: 1;
+
+  &::before {
+    background: linear-gradient(180deg, var(--color-orange), var(--color-yellow));
+    border-radius: 999px;
+    content: "";
+    filter: blur(20px);
+    inset: 15% 5% 7%;
+    opacity: 0.28;
+    position: absolute;
+    transform: rotate(-8deg);
+  }
+}
+
+.tiger {
+  display: block;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.48));
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.rosterContent {
+  grid-column: 2;
+  max-width: 900px;
+  min-width: 0;
+  position: relative;
+  transform: translateX(clamp(-80px, -5vw, -36px));
+  z-index: 1;
+
+  h1 {
+    color: var(--foreground);
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 7vw, 8.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    margin-bottom: 18px;
+    max-width: 100%;
+    text-transform: uppercase;
+  }
+}
+
+.eyebrow,
+.seasonLabel {
+  color: var(--color-orange);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+}
+
+.seasonLabel {
+  color: var(--color-yellow);
+  margin-bottom: 26px;
+}
+
+.rosterCard {
+  background: var(--color-charcoal);
+  border-radius: 8px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.rosterColumns {
+  display: grid;
+  gap: clamp(22px, 4vw, 44px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rosterList {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+
+  li {
+    align-items: baseline;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: minmax(58px, max-content) minmax(0, 1fr);
+  }
+}
+
+.playerNumber {
+  color: var(--color-orange);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.playerName {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+@media (max-width: 820px) {
+  .teamPhotoSection {
+    padding: 24px 18px 0;
+  }
+
+  .teamPhotoFrame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .rosterSection {
+    --page-block-padding: 72px;
+
+    grid-template-columns: 1fr;
+    min-height: calc(100svh - 76px);
+    padding: var(--page-block-padding) 18px 56px;
+  }
+
+  .tigerFrame {
+    display: none;
+  }
+
+  .rosterContent {
+    grid-column: auto;
+    text-align: center;
+    transform: none;
+
+    h1 {
+      font-size: clamp(3.5rem, 17vw, 5rem);
+      letter-spacing: -0.05em;
+    }
+  }
+
+  .rosterCard {
+    text-align: left;
+  }
+
+  .rosterColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .teamPhotoSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .teamPhotoFrame {
+    border-radius: 0;
+  }
+
+  .rosterList {
+    li {
+      gap: 14px;
+      grid-template-columns: minmax(52px, max-content) minmax(0, 1fr);
+    }
+  }
+
+  .playerNumber,
+  .playerName {
+    font-size: 1.3rem;
+  }
+}
