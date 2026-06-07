@@ -52,6 +52,12 @@ const jokes = [
     revealButtonText: "How?",
     nextButtonText: "Tell me another!",
   },
+    {
+    question: "What did the grape say when it got crushed?",
+    answer: "Nothing, it just let out a little wine",
+    revealButtonText: "What?",
+    nextButtonText: "Tell me another!",
+  },
 
 ] as const;
 

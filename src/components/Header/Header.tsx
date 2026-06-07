@@ -39,9 +39,16 @@ export function Header() {
             isAboutMenuOpen ? styles.navItemOpen : ""
           }`}
           onBlur={handleAboutMenuBlur}
-          onFocus={() => setIsAboutMenuOpen(true)}
-          onMouseEnter={() => setIsAboutMenuOpen(true)}
-          onMouseLeave={closeAboutMenu}
+          onPointerEnter={(event) => {
+            if (event.pointerType === "mouse") {
+              setIsAboutMenuOpen(true);
+            }
+          }}
+          onPointerLeave={(event) => {
+            if (event.pointerType === "mouse") {
+              closeAboutMenu();
+            }
+          }}
         >
           <button
             className={styles.navLink}
