@@ -43,15 +43,15 @@ export function Header() {
           onMouseEnter={() => setIsAboutMenuOpen(true)}
           onMouseLeave={closeAboutMenu}
         >
-          <Link
+          <button
             className={styles.navLink}
-            href="/about"
+            type="button"
             aria-expanded={isAboutMenuOpen}
             aria-haspopup="true"
-            onClick={closeAboutMenu}
+            onClick-={() => setIsAboutMenuOpen((isOpen) => !isOpen)}
           >
             Om Oss
-          </Link>
+          </button>
           <div
             className={styles.dropdownMenu}
             aria-hidden={!isAboutMenuOpen}
