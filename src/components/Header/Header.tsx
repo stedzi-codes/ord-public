@@ -48,7 +48,7 @@ export function Header() {
             type="button"
             aria-expanded={isAboutMenuOpen}
             aria-haspopup="true"
-            onClick-={() => setIsAboutMenuOpen((isOpen) => !isOpen)}
+            onClick={() => setIsAboutMenuOpen((isOpen) => !isOpen)}
           >
             Om Oss
           </button>
