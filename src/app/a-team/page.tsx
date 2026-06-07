@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { UnderConstructionSection } from "@/components/UnderConstructionSection/UnderConstructionSection";
+import { ATeamPage } from "@/views/ATeamPage/ATeamPage";
 
 export const metadata: Metadata = {
   title: "A-team | Oslo Roller Derby",
@@ -7,14 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ATeam() {
-  return (
-    <UnderConstructionSection
-      eyebrow="Oslo Roller Derby"
-      title="A-laget"
-      body={[
-        "Denne siden er under arbeid. Snart finner du mer informasjon om A-teamet, kamper og spillerne våre.",
-      ]}
-      image={{ priority: true }}
-    />
-  );
+  return <ATeamPage />;
 }
