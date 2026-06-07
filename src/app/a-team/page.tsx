@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { aTeamData } from "@/app/content/teams";
+import { aTeamData } from "@/content/teams";
 import { TeamPage } from "@/views/TeamPage/TeamPage";
 
 export const metadata: Metadata = {
