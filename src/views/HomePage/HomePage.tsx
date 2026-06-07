@@ -47,8 +47,8 @@ export function HomePage() {
 
           <div className={styles.heroFooter}>
             <p className={styles.heroText}>
-              Roller Derby er en fullkontaktsport på rulleskjøyter, og vi er hovedstadens klubb. 
-              Vi har nybegynnerskurs og en plass til alle. Om du vil væare spiller, dommer med eller
+              Roller Derby er en fullkontaktsport på rulleskøyter, og vi er hovedstadens klubb. 
+              Vi har nybegynnerkurs og en plass til alle. Om du vil være spiller, dommer med eller
               uten hjul.<br/><br/>
               Bli med oss da vel!
             </p>
