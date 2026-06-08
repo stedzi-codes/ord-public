@@ -1,9 +1,14 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { assetPath } from "@/lib/assetPath";
 import styles from "./JoinPage.module.scss";
 
-const faqItems = [
+const signUpFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform";
+
+const instagramUrl = "https://www.instagram.com/oslorollerderby/";
+
+const faqItems: { question: string; answer: ReactNode }[] = [
   {
     question: "Må jeg kunne stå på rulleskøyter fra før?",
     answer:
@@ -12,22 +17,29 @@ const faqItems = [
   {
     question: "Hva trenger jeg av utstyr?",
     answer:
-      "Dette er foreløpig plassholdertekst. Her kan vi forklare hva klubben kan låne ut, hva du bør kjøpe selv, og hva som er lurt å ha på første trening.",
+      "For å spille roller derby og delta på det nye nybegynnerkurset trenger du: hjelm, knebeskyttere, albuebeskyttere, håndleddsbeskyttere, tannbeskytter og rulleskøyter.",
   },
   {
     question: "Kan jeg bli med uten å ville spille kamper?",
     answer:
-      "Dette er foreløpig plassholdertekst. Her kan vi skrive om rekreasjon, frivillige roller, dommere, NSO-er og at det finnes flere måter å være med på.",
+      "Absolutt! Det er plass til alle i roller derby. Du kan lære reglene og skøyteferdighetene som trengs for å bli dommer, eller bli en ikke-skøytende funksjonær dersom du ikke foretrekker hjul under føttene. Det finnes også speakerroller, fotografer, kampdagsansvarlige, billett- og merch-selgere og andre frivillige verv som vi alltid er på utkikk etter å fylle.",
   },
   {
     question: "Når starter neste nybegynnerkurs?",
-    answer:
-      "Dette er foreløpig plassholdertekst. Her kan vi legge inn informasjon om vår- og høstkurs, påmelding og hvordan man får beskjed om datoer.",
-  },
-  {
-    question: "Hvem kan bli medlem?",
-    answer:
-      "Dette er foreløpig plassholdertekst. Her kan vi beskrive aldersgrenser, inkludering, forventninger og hvordan klubben tar imot nye medlemmer.",
+    answer: (
+      <>
+        Det neste nybegynnerkurset vil sannsynligvis starte i september. Meld deg på
+        e-postlisten vår{" "}
+        <a href={signUpFormUrl} rel="noopener noreferrer" target="_blank">
+          her
+        </a>{" "}
+        for å holde deg oppdatert, eller følg oss på{" "}
+        <a href={instagramUrl} rel="noopener noreferrer" target="_blank">
+          Instagram
+        </a>
+        , hvor vi jevnlig legger ut informasjon om pågående og kommende arrangementer.
+      </>
+    ),
   },
 ];
 
@@ -61,19 +73,22 @@ export function JoinPage() {
             <p className={styles.kicker}>Nybegynnerkurs</p>
             <h2>Start din derbyreise</h2>
             <p>
-              Du trenger ikke erfaring med rulleskøyter for å bli med i Oslo
-              Roller Derby. Nybegynnerkurset vårt er for alle som har lyst til å
-              prøve sporten, enten du drømmer om å spille kamper, bli dommer,
-              bidra som funksjonær, eller bare vil finne et nytt fellesskap på
-              hjul.
+              Du trenger ikke erfaring med rulleskøyter for å bli med i Oslo Roller Derby.
+              Nybegynnerkurset vårt er for alle som har lyst til å prøve sporten, enten du drømmer
+              om å spille kamper, bli dommer, bidra som funksjonær, eller bare vil finne et nytt
+              fellesskap på hjul.
             </p>
             <p>
-              Vi går gjennom grunnleggende skøyteferdigheter, trygghet på banen,
-              regler og roller i sporten. Du får lære i ditt eget tempo sammen
-              med trenere og klubbmedlemmer som husker veldig godt hvordan det
-              var å være ny.
+              Vi går gjennom grunnleggende skøyteferdigheter, trygghet på banen, regler og roller i
+              sporten. Du får lære i ditt eget tempo sammen med trenere og klubbmedlemmer som husker
+              veldig godt hvordan det var å være ny.
             </p>
-            <a className={styles.primaryButton} href="/https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform">
+            <a
+              className={styles.primaryButton}
+              href={signUpFormUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               Meld deg på
             </a>
           </article>
@@ -129,7 +144,12 @@ export function JoinPage() {
       <section className={styles.finalCta} style={ctaStyle}>
         <div className={styles.finalCtaContent}>
           <h2>Vil du bli en av oss, eller bare lære deg å stå på rulleskøyter?</h2>
-          <a className={styles.secondaryButton} href="/https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform">
+          <a
+            className={styles.secondaryButton}
+            href={signUpFormUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Bli medlem
           </a>
         </div>
