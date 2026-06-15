@@ -46,7 +46,7 @@ export const events: EventData[] = [
     eventTime: "Kl. 10:00 - 17:00",
     tags: ["bootcamp", "trening"],
     link: {
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSdxTTRBRw-O_TQ1J1AFADqZ3d2nZBzXbH7YD-fLq1TKb2fnsw/viewform?usp=send_form",
+      href: "https://billetto.no/e/season-kickoff-clinic-with-abi-black-penny-block-billetter-1953063",
       title: "Apalløkka flerbrukshall",
     },
   },
