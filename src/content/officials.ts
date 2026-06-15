@@ -16,11 +16,12 @@ export const officialsData = {
     alt: "Oslo Roller Derby officials crew",
   },
   roster: [
-    { name: "Kalle" },
-    { name: "Buzzkill" },
-    { name: "Ref'Irene" },
-    { name: "Stefferee" },
     { name: "Boolean" },
+    { name: "Buzzkill" },
     { name: "Denial" },
+    { name: "Kalle" },
+    { name: "Ref'Irene" },
+    { name: "Refraction" },
+    { name: "Stefferee" },
   ],
 } satisfies TeamPageProps;
