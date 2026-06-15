@@ -1,4 +1,5 @@
 import type { HomePageProps } from "@/views/HomePage/HomePage";
+import { links } from "@/content/links";
 
 export const homePageData = {
   heroText: (
@@ -11,7 +12,7 @@ export const homePageData = {
     </>
   ),
   heroButton: {
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform",
+    href: links.signUpForm,
     text: "Bli med oss!",
   },
   firstArticleTitle: "Oslo Roller Derby",

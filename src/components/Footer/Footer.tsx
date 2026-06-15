@@ -1,6 +1,7 @@
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { SiLinktree } from "react-icons/si";
 import Link from "next/link";
+import { links } from "@/content/links";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -18,7 +19,7 @@ export function Footer() {
 
       <div className={styles.socialLinks}>
         <a
-          href="https://www.facebook.com/oslorollerderby"
+          href={links.facebook}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -26,7 +27,7 @@ export function Footer() {
           <FaFacebookF aria-hidden="true" />
         </a>
         <a
-          href="https://www.instagram.com/oslorollerderby/"
+          href={links.instagram}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -34,7 +35,7 @@ export function Footer() {
           <FaInstagram aria-hidden="true" />
         </a>
         <a
-          href="https://linktr.ee/oslorollerderby"
+          href={links.linktree}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Linktree"

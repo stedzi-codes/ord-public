@@ -1,47 +1,9 @@
 import Image from "next/image";
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties } from "react";
+import { faqs } from "@/content/faq";
+import { links } from "@/content/links";
 import { assetPath } from "@/lib/assetPath";
 import styles from "./JoinPage.module.scss";
-
-const signUpFormUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfo_yl6a7eFS5-CxaAAfN3Y9EVAsY3uAS5Sa8h_uQxjjBhEXw/viewform";
-
-const instagramUrl = "https://www.instagram.com/oslorollerderby/";
-
-const faqItems: { question: string; answer: ReactNode }[] = [
-  {
-    question: "Må jeg kunne stå på rulleskøyter fra før?",
-    answer:
-      "Nei. Nybegynnerkurset vårt er laget for deg som er helt fersk, deg som har skøytet litt før, og deg som bare er nysgjerrig på sporten.",
-  },
-  {
-    question: "Hva trenger jeg av utstyr?",
-    answer:
-      "For å spille roller derby og delta på det nye nybegynnerkurset trenger du: hjelm, knebeskyttere, albuebeskyttere, håndleddsbeskyttere, tannbeskytter og rulleskøyter.",
-  },
-  {
-    question: "Kan jeg bli med uten å ville spille kamper?",
-    answer:
-      "Absolutt! Det er plass til alle i roller derby. Du kan lære reglene og skøyteferdighetene som trengs for å bli dommer, eller bli en ikke-skøytende funksjonær dersom du ikke foretrekker hjul under føttene. Det finnes også speakerroller, fotografer, kampdagsansvarlige, billett- og merch-selgere og andre frivillige verv som vi alltid er på utkikk etter å fylle.",
-  },
-  {
-    question: "Når starter neste nybegynnerkurs?",
-    answer: (
-      <>
-        Det neste nybegynnerkurset vil sannsynligvis starte i september. Meld deg på
-        e-postlisten vår{" "}
-        <a href={signUpFormUrl} rel="noopener noreferrer" target="_blank">
-          her
-        </a>{" "}
-        for å holde deg oppdatert, eller følg oss på{" "}
-        <a href={instagramUrl} rel="noopener noreferrer" target="_blank">
-          Instagram
-        </a>
-        , hvor vi jevnlig legger ut informasjon om pågående og kommende arrangementer.
-      </>
-    ),
-  },
-];
 
 export function JoinPage() {
   const ctaStyle = {
@@ -85,7 +47,7 @@ export function JoinPage() {
             </p>
             <a
               className={styles.primaryButton}
-              href={signUpFormUrl}
+              href={links.signUpForm}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -131,7 +93,7 @@ export function JoinPage() {
           <p className={styles.kicker}>Spørsmål og svar</p>
           <h2>Ofte stilte spørsmål</h2>
           <div className={styles.accordion}>
-            {faqItems.map((item) => (
+            {faqs.map((item) => (
               <details className={styles.faqItem} key={item.question}>
                 <summary>{item.question}</summary>
                 <p>{item.answer}</p>
@@ -146,7 +108,7 @@ export function JoinPage() {
           <h2>Vil du bli en av oss, eller bare lære deg å stå på rulleskøyter?</h2>
           <a
             className={styles.secondaryButton}
-            href={signUpFormUrl}
+            href={links.signUpForm}
             rel="noopener noreferrer"
             target="_blank"
           >
