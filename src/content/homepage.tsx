@@ -2,6 +2,11 @@ import type { HomePageProps } from "@/views/HomePage/HomePage";
 import { links } from "@/content/links";
 
 export const homePageData = {
+  heroTitle: {
+    firstLine: "Rå",
+    accentLine: "Inkluderende",
+    lastLine: "Velorganiserte",
+  },
   heroText: (
     <>
       Roller Derby er en fullkontaktsport på rulleskøyter, og vi er hovedstadens klubb. Vi har

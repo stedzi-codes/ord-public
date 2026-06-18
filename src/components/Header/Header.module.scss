@@ -60,6 +60,39 @@
   }
 }
 
+.languageLink {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  color: var(--foreground);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 900;
+  height: 38px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  min-width: 48px;
+  padding: 0 12px;
+  text-transform: uppercase;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-orange);
+    border-color: var(--color-orange);
+    color: var(--color-black);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 4px;
+  }
+}
+
 .dropdownMenu {
   background: rgba(0, 0, 0, 0.96);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
@@ -157,6 +190,12 @@
 
   .navLink {
     font-size: 1rem;
+  }
+
+  .languageLink {
+    font-size: 0.85rem;
+    height: 34px;
+    min-width: 44px;
   }
 
   .dropdownMenu {

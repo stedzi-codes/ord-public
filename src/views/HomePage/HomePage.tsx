@@ -4,6 +4,11 @@ import { assetPath } from "@/lib/assetPath";
 import styles from "./HomePage.module.scss";
 
 export type HomePageProps = {
+  heroTitle: {
+    firstLine: string;
+    accentLine: string;
+    lastLine: string;
+  };
   heroText: ReactNode;
   heroButton: {
     href: string;
@@ -23,6 +28,7 @@ export type HomePageProps = {
 };
 
 export function HomePage({
+  heroTitle,
   heroText,
   heroButton,
   firstArticleText,
@@ -40,11 +46,11 @@ export function HomePage({
       <section className={styles.hero} style={heroStyle}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>
-            RÅ
+            {heroTitle.firstLine}
             <br />
-            <span>INKLUDERENDE</span>
+            <span>{heroTitle.accentLine}</span>
             <br />
-            VELORGANISERTE
+            {heroTitle.lastLine}
           </h1>
 
           <div className={styles.heroFooter}>

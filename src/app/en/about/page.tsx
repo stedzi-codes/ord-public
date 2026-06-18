@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { aboutPageData } from "@/content/en/aboutpage";
 import { AboutPage } from "@/views/AboutPage/AboutPage";
-import { aboutPageData } from "@/content/aboutpage";
 
 export const metadata: Metadata = {
   title: "About Us | Oslo Roller Derby",
