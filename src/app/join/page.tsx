@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { joinPageData } from "@/content/joinpage";
 import { JoinPage } from "@/views/JoinPage/JoinPage";
 
 export const metadata: Metadata = {
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Join() {
-  return <JoinPage />;
+  return <JoinPage {...joinPageData} />;
 }

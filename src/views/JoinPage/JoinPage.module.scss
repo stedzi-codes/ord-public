@@ -244,7 +244,7 @@
     content: "-";
   }
 
-  p {
+  .faqAnswer {
     color: var(--color-text-soft);
     font-size: 1.15rem;
     line-height: 1.65;
@@ -384,7 +384,7 @@
       }
     }
 
-    p {
+    .faqAnswer {
       font-size: 1.05rem;
       padding: 0 20px 20px;
     }

@@ -1,11 +1,42 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { CSSProperties } from "react";
-import { faqs } from "@/content/faq";
 import { links } from "@/content/links";
 import { assetPath } from "@/lib/assetPath";
 import styles from "./JoinPage.module.scss";
 
-export function JoinPage() {
+export type FaqItem = {
+  question: string;
+  answer: ReactNode;
+};
+
+export type JoinPageProps = {
+  heroTitle: string;
+  heroSubtitle: string;
+  introSubtitle: string;
+  introTitle: string;
+  introText: ReactNode;
+  introCtaButtonText: string;
+  faqTitle: string;
+  faqSubtitle: string;
+  faqs: FaqItem[];
+  finalCtaTitle: string;
+  finalCtaButtonText: string;
+};
+
+export function JoinPage({
+  heroTitle,
+  heroSubtitle,
+  introSubtitle,
+  introTitle,
+  introText,
+  introCtaButtonText,
+  faqTitle,
+  faqSubtitle,
+  faqs,
+  finalCtaTitle,
+  finalCtaButtonText,
+}: JoinPageProps) {
   const ctaStyle = {
     "--stripes-image": `url("${assetPath("/images/tigerstriper.png")}")`,
   } as CSSProperties;
@@ -23,8 +54,8 @@ export function JoinPage() {
         />
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
-            <p>Bli med</p>
-            <h1>Finn din plass på banen</h1>
+            <p>{heroSubtitle}</p>
+            <h1>{heroTitle}</h1>
           </div>
         </div>
       </section>
@@ -32,26 +63,16 @@ export function JoinPage() {
       <section className={styles.introSection}>
         <div className={styles.introContent}>
           <article className={styles.introText}>
-            <p className={styles.kicker}>Nybegynnerkurs</p>
-            <h2>Start din derbyreise</h2>
-            <p>
-              Du trenger ikke erfaring med rulleskøyter for å bli med i Oslo Roller Derby.
-              Nybegynnerkurset vårt er for alle som har lyst til å prøve sporten, enten du drømmer
-              om å spille kamper, bli dommer, bidra som funksjonær, eller bare vil finne et nytt
-              fellesskap på hjul.
-            </p>
-            <p>
-              Vi går gjennom grunnleggende skøyteferdigheter, trygghet på banen, regler og roller i
-              sporten. Du får lære i ditt eget tempo sammen med trenere og klubbmedlemmer som husker
-              veldig godt hvordan det var å være ny.
-            </p>
+            <p className={styles.kicker}>{introSubtitle}</p>
+            <h2>{introTitle}</h2>
+            {introText}
             <a
               className={styles.primaryButton}
               href={links.signUpForm}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Meld deg på
+              {introCtaButtonText}
             </a>
           </article>
 
@@ -90,13 +111,13 @@ export function JoinPage() {
 
       <section className={styles.faqSection}>
         <div className={styles.faqContent}>
-          <p className={styles.kicker}>Spørsmål og svar</p>
-          <h2>Ofte stilte spørsmål</h2>
+          <p className={styles.kicker}>{faqSubtitle}</p>
+          <h2>{faqTitle}</h2>
           <div className={styles.accordion}>
             {faqs.map((item) => (
               <details className={styles.faqItem} key={item.question}>
                 <summary>{item.question}</summary>
-                <p>{item.answer}</p>
+                <div className={styles.faqAnswer}>{item.answer}</div>
               </details>
             ))}
           </div>
@@ -105,14 +126,14 @@ export function JoinPage() {
 
       <section className={styles.finalCta} style={ctaStyle}>
         <div className={styles.finalCtaContent}>
-          <h2>Vil du bli en av oss, eller bare lære deg å stå på rulleskøyter?</h2>
+          <h2>{finalCtaTitle}</h2>
           <a
             className={styles.secondaryButton}
             href={links.signUpForm}
             rel="noopener noreferrer"
             target="_blank"
           >
-            Bli medlem
+            {finalCtaButtonText}
           </a>
         </div>
       </section>
