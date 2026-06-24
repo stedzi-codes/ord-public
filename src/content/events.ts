@@ -11,16 +11,6 @@ export type EventData = {
 
 export const events: EventData[] = [
   {
-    eventTitle: "Panel: Finding your body",
-    eventDate: "Tirsdag 23. juni",
-    eventTime: "Kl. 15:30",
-    tags: ["pride", "panel"],
-    link: {
-      href: "https://www.oslopride.no/events/ph26-findingyourbody",
-      title: "Pride House",
-    },
-  },
-  {
     eventTitle: "ORD at Pride Park",
     eventDate: "Onsdag 24. juni",
     eventTime: "Kl. 19:00 - 21:00",
@@ -38,6 +28,16 @@ export const events: EventData[] = [
     link: {
       href: "https://www.oslopride.no/p/prideparade",
       title: "Pride Parade",
+    },
+  },
+  {
+    eventTitle: "Open training",
+    eventDate: "Torsdag 3. september",
+    eventTime: "Kl. 20:00",
+    tags: ["open-training", "recruitment"],
+    link: {
+      href: "https://linktr.ee/oslorollerderby",
+      title: "Apalløkka flerbrukshall",
     },
   },
   {
